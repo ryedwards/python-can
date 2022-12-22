@@ -85,6 +85,7 @@ class GsUsbBus(can.BusABC):
         frame = GsUsbFrame()
         frame.can_id = can_id
         frame.can_dlc = msg.dlc
+        frame.channel = self.channel_info
         frame.timestamp_us = int(msg.timestamp * 1000000)
         frame.data = list(msg.data)
 
